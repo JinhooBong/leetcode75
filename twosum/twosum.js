@@ -20,6 +20,29 @@ var twoSum = function(nums, target) {
   //        - may not use the same element twice
   // edge case: if array nums has only one number
 
+  // create an array variable to store the indices of the two numbers
+  // for (let i = 0; i < nums.length - 1; i++) {
+  //    for (let j = i + 1; j < nums.length; j++) {}
+
+  // if any element is greater than the target, then we don't have to worry about testing it
+
+  // if i + j === target, then we push i & j into our array variable
+
+  // return array variable
+
+  let indiceArr = [];
+
+  for (let i = 0; i < nums.length - 1; i++) {
+      for (let j = i + 1; j < nums.length; j++) {
+          if (nums[i] + nums[j] === target) {
+            indiceArr.push(i);
+            indiceArr.push(j);
+          }
+        }
+  }
+
+  return indiceArr;
+
 };
 
 module.exports = twoSum;
