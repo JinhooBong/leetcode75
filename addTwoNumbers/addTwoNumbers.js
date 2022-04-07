@@ -75,6 +75,33 @@ var addTwoNumbers = function(l1, l2) {
 
   return sumHead;
 
+  // let carry = 0;
+  // let previousNode = new ListNode();
+  // let headNode = previousNode;
+
+  // while (l1 || l2 || carry) {
+  //   let l1Val = 0;
+  //   let l2Val = 0;
+
+  //   if (l1) {
+  //     l1Val = l1.val;
+  //   }
+
+  //   if (l2) {
+  //     l2Val = l2.val;
+  //   }
+
+  //   let sum = l1Val + l2Val + carry;
+  //   carry = sum >= 10 ? 1 : 0;
+
+  //   let digit = sum % 10;
+  //   let currentNode = new ListNode(digit);
+  //   previousNode.next = currentNode;
+  //   previousNode = currentNode;
+
+  // }
+
+  // return headNode.next();
 };
 
 module.exports = addTwoNumbers;
