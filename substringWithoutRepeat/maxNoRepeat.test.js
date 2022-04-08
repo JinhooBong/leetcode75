@@ -1,4 +1,3 @@
-s = "abcabcbb" = "bbbbb""pwwkew"
 const maxNoRepeat = require('./maxNoRepeat');
 
 describe('Longest Substring without Repeating Characters', () => {
