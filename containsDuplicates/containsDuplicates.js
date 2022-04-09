@@ -13,23 +13,23 @@
   // if it's found in the array, we can return true
   // else we return false if we've reached the end of the array without returning true
   
-//     let numSet = new Set();
+    let numSet = new Set();
   
-//     for (let num of nums) {
-//         if (numSet.has(num)) {
-//             return true;
-//         } else {
-//             numSet.add(num);
-//         }
-//     }
+    for (let num of nums) {
+        if (numSet.has(num)) {
+            return true;
+        } else {
+            numSet.add(num);
+        }
+    }
   
-//     return false;
+    return false;
   
-  let numSet = new Set(nums);
+  // let numSet = new Set(nums);
   
-  // if this returns true that means that the nums length is longer bc it contains duplicates
-  // else it would return false meaning that the set contains unique values 1:1 with the array
-  return (numSet.size !== nums.length);
+  // // if this returns true that means that the nums length is longer bc it contains duplicates
+  // // else it would return false meaning that the set contains unique values 1:1 with the array
+  // return (numSet.size !== nums.length);
   
 };
 
