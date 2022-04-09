@@ -21,19 +21,41 @@
   }
   
   let stack = [];
-  let paranthesesMatchMap = {
+  let parenMap = {
       "{" : "}",
       "[": "]",
       "(": ")"
   };
+
+
+  // we iterate through the string
+  // if the current character is an opening bracket
+  // we can then push the closing bracket into the stack
+  // if the current character is a closing bracket
+  // we check to see if the top of the stack is the same bracket
+  // if it is, then we pop that bracket
+  // if it's not, then we return false
   
-  // iterate through the string
-  // if we find an opening bracket, we push the closing bracket into the stack
-  // when we run into a closing bracket, we see if the top of the stack is that same bracket
-  // if so, then we pop that stack
-  // if not, then we have an invalid string automaticlaly
-  
-  
-  
+
+  // if the stack is not empty, then return false
+
+
+  for (let i in s) {
+    // if its an opening bracket
+    if (s[i] in parenMap) {
+      stack.push(parenMap[s[i]]);
+    } else {
+      // its a closing bracket
+      if (s[i] === stack[stack.length - 1]) {
+        stack.pop();
+      } else {
+        return false;
+      }
+    }
+  }
+
+  return stack.length === 0 ? true : false;
   
 };
+
+module.exports = isValid;
