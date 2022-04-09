@@ -28,32 +28,34 @@ const { validateCLIOptions } = require("jest-validate");
           convertedString += s[i].toLowerCase();
       }
   }
-  
-  // if it's odd, we can start from the end points until our two pointers match
-  if (convertedString.length % 2 !== 0) {
-      let l = 0;
-      let r = convertedString.length - 1;
+ 
+  return convertedString === convertedString.split("").reverse().join("");
+
+  // // if it's odd, we can start from the end points until our two pointers match
+  // if (convertedString.length % 2 !== 0) {
+  //     let l = 0;
+  //     let r = convertedString.length - 1;
       
-      while (l !== r) {
-          if (convertedString[l] !== convertedString[r]) {
-              return false;
-          }
-          l++;
-          r--;
-      }
-  } else {
-      let l = 0;
-      let r = convertedString.length - 1;
+  //     while (l !== r) {
+  //         if (convertedString[l] !== convertedString[r]) {
+  //             return false;
+  //         }
+  //         l++;
+  //         r--;
+  //     }
+  // } else {
+  //     let l = 0;
+  //     let r = convertedString.length - 1;
       
-      while (l < r) {
-          if (convertedString[l] !== convertedString[r]) {
-              return false;
-          }
-          l++;
-          r--;
-      }
-  }
+  //     while (l < r) {
+  //         if (convertedString[l] !== convertedString[r]) {
+  //             return false;
+  //         }
+  //         l++;
+  //         r--;
+  //     }
+  // }
   
-  return true;
+  // return true;
 };
 module.exports = isPalindrome;
