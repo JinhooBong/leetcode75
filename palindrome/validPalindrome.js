@@ -19,17 +19,20 @@ const { validateCLIOptions } = require("jest-validate");
   // we can iterate through the string
   // create an array with all of the characters that are alphanumeric characters.
   
-  let convertedString = "";
+  // Time Complexity: O(n);
+  // space complexity: O(n)
+
+  // let convertedString = "";
   
-  for (let i in s) {
-      // this checks to see if character is alphanumeric
-      if ((/^[a-z0-9]+$/i).test(s[i])) {
-          // if uppercase, we convert to lower
-          convertedString += s[i].toLowerCase();
-      }
-  }
+  // for (let i in s) {
+  //     // this checks to see if character is alphanumeric
+  //     if ((/^[a-z0-9]+$/i).test(s[i])) {
+  //         // if uppercase, we convert to lower
+  //         convertedString += s[i].toLowerCase();
+  //     }
+  // }
  
-  return convertedString === convertedString.split("").reverse().join("");
+  // return convertedString === convertedString.split("").reverse().join("");
 
   // // if it's odd, we can start from the end points until our two pointers match
   // if (convertedString.length % 2 !== 0) {
@@ -57,5 +60,38 @@ const { validateCLIOptions } = require("jest-validate");
   // }
   
   // return true;
+
+
+
+
+
+  // ANOTHER APPROACH USING TWO POINTERS
+  // time complexity: O(n);
+  // space complexity: O(1);
+
+  // we can have two pointers that start at left and right
+  // and we move in until either l === r or l > r
+
+  let l = 0;
+  let r = s.length - 1;
+
+  while (l < r) {
+    // check if both characters are alphanumeric
+    while(!(/^[a-z0-9]+$/i).test(s[l])) {
+      l++;
+    }
+    while(!(/^[a-z0-9]+$/i).test(s[r])) {
+      r--;
+    }
+    if (s[l].toLowerCase() !== s[r].toLowerCase()) {
+      return false;
+    }
+
+    l++;
+    r--;
+  }
+
+  return true;
+
 };
 module.exports = isPalindrome;
