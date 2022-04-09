@@ -77,10 +77,10 @@ const { validateCLIOptions } = require("jest-validate");
 
   while (l < r) {
     // check if both characters are alphanumeric
-    while(!(/^[a-z0-9]+$/i).test(s[l])) {
+    while(l < r && !(/^[a-z0-9]+$/i).test(s[l])) {
       l++;
     }
-    while(!(/^[a-z0-9]+$/i).test(s[r])) {
+    while(r > l && !(/^[a-z0-9]+$/i).test(s[r])) {
       r--;
     }
     if (s[l].toLowerCase() !== s[r].toLowerCase()) {
