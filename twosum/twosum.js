@@ -43,6 +43,30 @@ var twoSum = function(nums, target) {
 
   return indiceArr;
 
+
+  // another approach
+  // using hashmap
+  // we can iterate through the nums array
+  // calculate the difference between target and the current value
+  // if our hashmap has that value
+  // then we can return that hashmap's corresponding index & currentvalue index
+  // else
+  // we can add the pair of (current value, index) to our hashmap
+
+  // let map = new Map();
+
+  // for (let n in nums) {
+  //   let diff = target - nums[n];
+
+  //   if (map.has(diff)) {
+  //     return [n, map.get(diff)];
+  //   } else {
+  //     map.set(nums[n], n);
+  //   }
+  // }
+
+  // return [];
+
 };
 
 module.exports = twoSum;
