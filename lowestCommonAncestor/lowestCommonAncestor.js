@@ -18,6 +18,11 @@
   // edge case: a node can be the descendant of itself
 
   // while we have a root node
+  // if the p and q values are less than the current root node value
+  // then we want to check the left binary subtree
+  // if the p and q values are greater than the current root node value
+  // then we want to check the right binary subtree
+  // else this means that we've either reached the split or we've hit the node itself which automatically means it is the lowest common ancestor
   while (root) {
     if (p.val < root.val && q.val < root.val) {
       root = root.left;
