@@ -42,6 +42,28 @@
 
 
 
-  
+  // ITERATIVELY
+  // we want to use a stack
 
-};
+  // we want to check the current node
+  // number of times we visit a node 
+  // because this algorithm will traverse the tree in order, whenever n == k, we can hit return 
+//   let n = 0;
+//   let stack = [];
+
+//   let curr = root;
+
+//   while (stack.length !== 0 || curr) {
+
+//     while (curr) {
+//       stack.push(curr);
+//       curr = curr.left;
+//     }
+
+//     curr = stack.pop();
+//     n += 1;
+//     if (n === k) return curr.val;
+//     curr = curr.right;
+//   }
+
+// };
